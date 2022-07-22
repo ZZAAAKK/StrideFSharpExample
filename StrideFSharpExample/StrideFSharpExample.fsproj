@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net6.0</TargetFramework>
+		<!--<StrideIsExecutable>false</StrideIsExecutable>-->
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Include="Program.fs" />
+	</ItemGroup>
+	
+	<ItemGroup>
+		<PackageReference Include="CodeCapital.Stride.GameDefaults" Version="1.0.0-preview.6" />
+		<PackageReference 
+			Include="Stride.Core.Assets.CompilerApp" 
+			Version="4.1.0.1734" 
+			PrivateAssets="contentFiles;analyzers"
+			IncludeAssets="..\**\*.*"/>
+	</ItemGroup>
+</Project>
