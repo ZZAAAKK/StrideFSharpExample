@@ -13,5 +13,8 @@ Still very much in progress...
     ```
       Please note that this 'fix' may have caused other issues that are still being worked out.
 
-## Current issues
- * Code compiles (as above), however shaders appear to not compile
+ * Code now runs with an interim fix
+    * Created a new C# project
+    * Added CodeCapital.Stride.GameDefaults nuget package
+    * Built the project
+    * Copied files from the ...\bin\debug\net6.0\data\db\bundles to the same folder in the F# project
