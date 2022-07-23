@@ -6,15 +6,15 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<Compile Include="HitComponentScript.fs" />
+		<Compile Include="GameExtension.fs" />
+		<Compile Include="BoxGeneratorScript.fs" />
+		<Compile Include="MoveComponentScript.fs" />
 		<Compile Include="Program.fs" />
 	</ItemGroup>
 	
 	<ItemGroup>
 		<PackageReference Include="CodeCapital.Stride.GameDefaults" Version="1.0.0-preview.6" />
-		<PackageReference 
-			Include="Stride.Core.Assets.CompilerApp" 
-			Version="4.1.0.1734" 
-			PrivateAssets="contentFiles;analyzers"
-			IncludeAssets="..\**\*.*"/>
+		<PackageReference Include="Stride.Core.Assets.CompilerApp" Version="4.1.0.1734" PrivateAssets="contentFiles;analyzers" IncludeAssets="..\**\*.*" />
 	</ItemGroup>
 </Project>
