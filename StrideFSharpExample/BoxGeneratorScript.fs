@@ -12,9 +12,10 @@ type BoxGeneratorScript(game : Game, entity : Entity) =
     let mutable simulation : Simulation option = None
 
     override __.Start() =
-        cameraComponent <- game.SceneSystem.SceneInstance.RootScene.Entities 
-            |> Seq.map (fun x -> x.Get<CameraComponent>())
+        cameraComponent <- entity.Scene.Entities 
+            |> Seq.where (fun x -> x.Get<CameraComponent>() = null |> not)
             |> Seq.head
+            |> (fun e -> e.Get<CameraComponent>())
             |> Some
         simulation <- game.SceneSystem.SceneInstance.GetProcessor<PhysicsProcessor>().Simulation |> Some
 
@@ -34,7 +35,6 @@ type BoxGeneratorScript(game : Game, entity : Entity) =
                 match hitResult.Succeeded with
                 | true -> ()
                 | _ -> 
-                    //GameExtension.AddBoxToScene game |> ignore
                     let e = GameExtension.AddBoxToScene game
                     e.Add((game, e) |> HitComponentScript)
         | _ -> ()
